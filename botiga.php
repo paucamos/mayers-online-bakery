@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/estilsContacta.css">
   <link rel="stylesheet" href="css/scroll.css">
   <link rel="stylesheet" href="css/estilLogin.css">
+  <link rel="stylesheet" href="css/productes.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <script src="./js/scripts.js"></script>
   <link rel=”shortcut icon” type=”image/png” href=”/favicon.png”/>
@@ -61,10 +62,10 @@
   </div>
   <section id="serveis" class="section section-light">
     <h2>Articles</h2>
-    <p>
-      Si hi ha alguna cosa que ens identifica i que ens dóna la nostra identitat són els pastissos de celebració.
-      Per a això combinem les diferents tècniques pastisseres per aconseguir sorprendre, emocionar i crear moments únics i irrepetibles.
-    </p>
+      <?php
+        include('conexio.php');
+        include('productes.php');
+       ?>
   </section>
   <section class="section section-dark">
     <footer> Pau Camós Parra</footer>
