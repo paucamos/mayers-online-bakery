@@ -1,4 +1,5 @@
 <?php
+session_start();
 $error=''; //Variable per a guardar el missatge d'error;
 if(isset($_POST['submit'])){
  if(empty($_POST['username']) || empty($_POST['password'])){
@@ -15,6 +16,7 @@ if(isset($_POST['submit'])){
 
  $rows = mysqli_num_rows($query);
  if($rows == 1){
+   $_SESSION['usuari'] = $user;
    header("Location: crm.php"); // redirecció si el login es correcte
  }
  else

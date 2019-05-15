@@ -1,14 +1,25 @@
+var menuObert = false;
 function openNav() {
+  document.getElementById("icoMenu").style.transform = "rotate(90deg)";
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  menuObert = true;
 
 }
 
 function closeNav() {
+  document.getElementById("icoMenu").style.transform = "rotate(0deg)";
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
+  menuObert = false;
 }
-
+function controlaBoto(){
+  if (menuObert) {
+    closeNav();
+  } else {
+    openNav();
+  }
+}
 /*Scroll cap a dalt*/
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -34,9 +45,4 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
-}
-//tanca sessio
-function tancaSessio() {
-  alert("hola");
-  include('tancaSessio.php');
 }
