@@ -1,82 +1,82 @@
-body, html{
-  height:100%;
-  margin:0;
-  font-size:16px;
-  font-family:"Lato", sans-serif;
-  font-weight:400;
-  line-height:1.8em;
-  color:#666;
+body, html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #666;
 }
+
 img {
-  opacity:0.70;
+  opacity: 0.70;
 }
 
-.pimg1, .pimg2, .pimg3{
-  position:relative;
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-
+.pimg1, .pimg2, .pimg3 {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   /*
     fixed = parallax
     scroll = normal
   */
-  background-attachment:absolute;
+  background-attachment: absolute;
 }
 
-.pimg1{
-  background-image:url('../img/image1.jpg');
-  min-height:100%;
+.pimg1 {
+  background-image: url('../img/image1.jpg');
+  min-height: 100%;
 }
 
-.pimg2{
-  background-image:url('../img/image2.jpg');
-  min-height:400px;
+.pimg2 {
+  background-image: url('../img/image2.jpg');
+  min-height: 400px;
 }
 
-.pimg3{
-  background-image:url('../img/image3.jpg');
-  min-height:400px;
+.pimg3 {
+  background-image: url('../img/image3.jpg');
+  min-height: 400px;
 }
 
-.section{
-  text-align:center;
-  padding:50px 80px;
+.section {
+  text-align: center;
+  padding: 50px 80px;
 }
 
-.section-light{
-  background-color:#f4f4f4;
-  color:#666;
+.section-light {
+  background-color: #f4f4f4;
+  color: #666;
 }
 
-.section-dark{
-  background-color:#282e34;
-  color:#ddd;
+.section-dark {
+  background-color: #282e34;
+  color: #ddd;
 }
 
-.ptext{
-  position:absolute;
-  top:50%;
-  width:100%;
-  text-align:center;
-  color:#000;
-  font-size:27px;
-  letter-spacing:8px;
-  text-transform:uppercase;
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
 }
 
-.ptext .border{
-  background-color:#111;
-  color:#fff;
-  padding:20px;
+.ptext .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
 }
 
-.ptext .border.trans{
-  background-color:transparent;
+.ptext .border.trans {
+  background-color: transparent;
 }
 
-@media(max-width:568px){
-  .pimg1, .pimg2, .pimg3{
-    background-attachment:scroll;
+@media(max-width:568px) {
+  .pimg1, .pimg2, .pimg3 {
+    background-attachment: scroll;
   }
 }

@@ -1,59 +1,64 @@
 /*estils menu superior*/
 body {
-    margin: 0;
-    background-color: #feebe2;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fda47e;
-  }
-  h1 {
-    font-family: 'Savoye LET';
-    font-weight: bold;
-    font-size: 72px;
-  }
+  margin: 0;
+  background-color: #feebe2;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fda47e;
+}
 
-  #navbar {
-    background-color: #fda47e;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-  }
+h1 {
+  font-family: 'Savoye LET';
+  font-weight: bold;
+  font-size: 72px;
+}
 
-  #navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+#navbar {
+  background-color: #fda47e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
 
-  #navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  .titolInicial {
-    text-align: center;
-    padding-top: 5%;
-    width: 600px;
-    margin: 0px auto;
-    height: auto;
-    vertical-align: middle;
-  }
-  #navbarLogin {
-    margin-left: 90%;
-  }
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-  /*Estils columnes*/
-  * {
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.titolInicial {
+  text-align: center;
+  padding-top: 5%;
+  width: 600px;
+  margin: 0px auto;
+  height: auto;
+  vertical-align: middle;
+}
+
+#navbarLogin {
+  margin-left: 90%;
+}
+
+/*Estils columnes*/
+* {
   box-sizing: border-box;
 }
+
 .row {
   border: 2px solid green;
   text-align: center;
 }
+
 /* Create three equal columns that floats next to each other */
 .column {
   display: inline-block;
@@ -62,7 +67,8 @@ body {
   float: left;
   width: 31.33%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 300px;
+  /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
