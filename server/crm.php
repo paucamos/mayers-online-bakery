@@ -28,7 +28,7 @@
     <!--Menu superior-->
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="../index.html">Inici</a>
+    <a href="../index.php">Inici</a>
   </div>
   <div id="main">
     <button class="openbtn" id="icoMenu" onclick="controlaBoto()">☰</button>

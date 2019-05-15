@@ -1,4 +1,5 @@
 var menuObert = false;
+
 function openNav() {
   document.getElementById("icoMenu").style.transform = "rotate(90deg)";
   document.getElementById("mySidebar").style.width = "250px";
@@ -10,10 +11,11 @@ function openNav() {
 function closeNav() {
   document.getElementById("icoMenu").style.transform = "rotate(0deg)";
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("main").style.marginLeft = "0";
   menuObert = false;
 }
-function controlaBoto(){
+
+function controlaBoto() {
   if (menuObert) {
     closeNav();
   } else {
@@ -22,7 +24,9 @@ function controlaBoto(){
 }
 /*Scroll cap a dalt*/
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {
+  scrollFunction()
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

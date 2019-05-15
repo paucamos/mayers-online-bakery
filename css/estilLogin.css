@@ -1,5 +1,10 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -55,7 +60,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -73,7 +78,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .user {
   width: 80px;
   float: right;
-  background:rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 3px;
   margin-top: 16px;
@@ -83,10 +88,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   user-select: none;
   text-decoration: none;
 }
+
 .user:hover {
   background-color: #444;
   cursor: pointer;
 }
+
 #ico {
   vertical-align: middle;
 }

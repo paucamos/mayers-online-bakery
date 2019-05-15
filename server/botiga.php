@@ -27,7 +27,7 @@
     <!--Menu superior-->
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="../index.html">Inici</a>
+    <a href="../index.php">Inici</a>
 
     <!-- FORM LOGIN -->
     <a class="open-button" onclick="openForm()"><i class="far fa-user"></i> Entra</a>

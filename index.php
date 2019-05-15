@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +22,20 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="#nosaltres">Qui som</a>
     <a href="#serveis">Serveis</a>
-    <a href="./server/botiga.php">Botiga</a>
+    <?php // TODO: Acabar el if session pagina diferent?>
+    <?php
+    if (session_id() == '' || !isset($_SESSION)) {
+        // session isn't started
+        session_start();
+        echo '<a href="./server/botiga.php">Botiga</a>';
+    } else {
+        echo '<a href="./server/botiga.php">Botiga</a>';
+    }
+     ?>
     <a href="#contacta">Contacta</a>
   </div>
   <div id="main">
-    <button class="openbtn" id="icoMenu" onclick="openNav()">☰</button>
+    <button class="openbtn" id="icoMenu" onclick="controlaBoto()">☰</button>
   </div>
     <!--Fi menu superior-->
     <div class="ptext">
