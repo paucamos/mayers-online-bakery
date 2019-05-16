@@ -17,17 +17,29 @@
 </head>
 <body>
   <?php
-  // TODO: Crear sessions
   // TODO: Crear estils articles
     include('login.php'); // Conexio
   ?>
-  <div class="pimg1">
+  <div id="headerBotiga" >
+    <?php
+    if (isset($_SESSION['usuari'])) {
+        echo '<a href="tancaSessio.php">
+        <div class="user">
+          <i id="ico" class="far fa-user"><span style="font-family: Arial"> Surt</span></i>
+        </div>
+      </a>';
+    }
+   ?>
     <button onclick="topFunction()" id="myBtn" title="amunt">▲</button>
     <!--Menu superior-->
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="../index.php">Inici</a>
-
+    <?php
+        if (isset($_SESSION['usuari'])) {
+            echo '<a href="crm.php">CRM</a>';
+        }
+?>
     <!-- FORM LOGIN -->
     <a class="open-button" onclick="openForm()"><i class="far fa-user"></i> Entra</a>
 
@@ -51,6 +63,7 @@
     <button class="openbtn" id='icoMenu' onclick="controlaBoto()">☰</button>
   </div>
     <!--Fi menu superior-->
+
     <div class="ptext">
       <span class="border">
         Botiga Online

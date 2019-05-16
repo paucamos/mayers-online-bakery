@@ -1,9 +1,27 @@
+#headerBotiga {
+  background-image: url('../img/image1.jpg');
+  height: 50%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment: absolute;
+}
+
 .producte {
   background-color: grey;
   border-radius: 15px;
   display: inline-block;
-  margin: 0 auto;
   margin: 3px;
+  height: 400px;
+}
+
+.producte:hover img {
+  opacity: 0.2;
 }
 
 #objeto0 {
@@ -12,8 +30,10 @@
   text-transform: uppercase;
 }
 
-#objeto2 {}
-  
+.propiedades {
+  display: none;
+}
+
 .fotoProducte {
   width: 400px;
   height: 400px;

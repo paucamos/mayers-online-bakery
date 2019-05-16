@@ -1,3 +1,6 @@
 <?php
-  include('login.php');
-  header("Location: ../index.html"); // redirecció si logout
+session_start();
+
+$_SESSION = array();
+session_destroy();
+  header("Location: ../index.php"); // redirecció si logout

@@ -12,6 +12,30 @@ h1 {
   font-size: 72px;
 }
 
+/*User Session*/
+.user {
+  width: 80px;
+  float: right;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 3px;
+  margin-top: 16px;
+  height: 45px;
+  margin-right: 16px;
+  color: white;
+  user-select: none;
+  text-decoration: none;
+}
+
+.user:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+#ico {
+  vertical-align: middle;
+}
+
 #navbar {
   background-color: #fda47e;
   position: fixed;

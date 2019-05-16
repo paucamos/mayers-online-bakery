@@ -15,6 +15,8 @@ if (isset($_POST['submit'])) {
         $rows = mysqli_num_rows($query);
         if ($rows == 1) {
             $_SESSION['usuari'] = $user;
+
+
             header("Location: crm.php"); // redirecció si el login es correcte
         } else {
             $error = "Usuari o contrasenya invalids.";

@@ -13,25 +13,36 @@
   <link rel="stylesheet" href="css/scroll.css">
   <script src="js/scripts.js"></script>
   <link rel="icon" type=”image/png” href=”img/favicon.png/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
   <div class="pimg1">
+    <?php
+      if (isset($_SESSION['usuari'])) {
+          echo '<a href="server/tancaSessio.php">
+          <div class="user">
+            <i id="ico" class="far fa-user"><span style="font-family: Arial"> Surt</span></i>
+          </div>
+        </a>';
+      }
+    ?>
     <button onclick="topFunction()" id="myBtn" title="amunt">▲</button>
     <!--Menu superior-->
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="#nosaltres">Qui som</a>
     <a href="#serveis">Serveis</a>
-    <?php // TODO: Acabar el if session pagina diferent?>
+    <!-- Control Sessio -->
     <?php
-    if (session_id() == '' || !isset($_SESSION)) {
+    if (isset($_SESSION['usuari'])) {
         // session isn't started
-        session_start();
         echo '<a href="./server/botiga.php">Botiga</a>';
+        echo '<a href="./server/crm.php">CRM</a>';
     } else {
         echo '<a href="./server/botiga.php">Botiga</a>';
     }
      ?>
+
     <a href="#contacta">Contacta</a>
   </div>
   <div id="main">
