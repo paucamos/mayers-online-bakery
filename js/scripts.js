@@ -50,3 +50,10 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+//funcio controla height
+function controlaHeight() {
+  if () {
+
+  }
+}

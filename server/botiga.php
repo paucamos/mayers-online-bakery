@@ -18,7 +18,6 @@
 <body>
   <?php
   // TODO: Crear sessions
-  // TODO: Bucle Mostra Articles
   // TODO: Crear estils articles
     include('login.php'); // Conexio
   ?>
