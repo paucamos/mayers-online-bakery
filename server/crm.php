@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../css/estilLogin.css">
   <link rel="stylesheet" href="../css/estilsCrm.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/scripts.js"></script>
 </head>
 <body>

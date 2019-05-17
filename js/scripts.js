@@ -50,3 +50,24 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+//Funcio jQuery
+$(document).ready(function(){
+
+$("#afegeix").click(function() {
+  var id = document.getElementById('input1').value;
+  var nom = document.getElementById('input2').value;
+  var descripcio = document.getElementById('input3').value;
+  var preu = document.getElementById('input4').value;
+  $.post("funcionsDB/crea.php", {
+      id: id,
+      nom: nom,
+      descripcio: descripcio,
+      preu: preu
+    },
+    function(data, status) {
+      var d = JSON.parse(data);
+      alert(d.producte);
+      //location.reload();
+    });
+})});
