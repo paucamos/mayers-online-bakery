@@ -7,7 +7,7 @@ echo "<table border=1 class='taulaProductes' id='taulaElements'>";
 $contador = 1;
 $numImg = 1;
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr class='producte' id='producte_'>";
+    echo "<tr class='producte' id='fila'>";
     foreach ($row as $field => $value) {
         if ($value == $row['id']) { //guardo el id dins una variable
             $id = $value;
@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $contador++;
     echo "</tr>";
 }
-echo "<tr id='taulaP'></td>";
+echo "<tr id='filaNova'></tr>";
 echo "<tr>";
 $idContador = 1;
 for ($i=0; $i < 4 ; $i++) {
@@ -30,4 +30,4 @@ for ($i=0; $i < 4 ; $i++) {
 }
 echo "</tr>";
 echo "</table>";
-echo '<button id="afegeix">Crea</button>';
+echo '<button id="afegeix" onclick=crea(id)>Crea</button>';
