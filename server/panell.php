@@ -1,23 +1,31 @@
 <?php
-include('conexio.php');
-$sql = "SELECT * FROM productes LIMIT 10";
-$result = mysqli_query($conn, $sql); // First parameter is just return of "mysqli_connect()" function
+include('conexio.php'); //conexio
+$sql = "SELECT * FROM productes";
+$result = mysqli_query($conn, $sql); //exec(conexio + query)
 echo "<h2>Llista Productes:</h2>";
-echo "<table border=1 class='taulaProductes' >";
-$contador = 0;
+echo "<table border=1 class='taulaProductes' id='taulaElements'>";
+$contador = 1;
 $numImg = 1;
-while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
-    echo "<tr class='producte' >";
-    foreach ($row as $field => $value) { // I you want you can right this line like this: foreach($row as $value) {
-        echo  "<td {$contador} ++ class='propiedades' >{$value} </td>" ; // I just did not use "htmlspecialchars()" function.
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr class='producte' id='producte_'>";
+    foreach ($row as $field => $value) {
+        if ($value == $row['id']) { //guardo el id dins una variable
+            $id = $value;
+        }
+        echo  "<td class='propiedades' id='propietat{$id}'>{$value} </td>" ;
     }
-    $contador = 0;
+    //funcio elimina passant el id
+    echo "<td id='elimina' onclick='elimina(".$id.")'>
+              <i class='fas fa-trash-alt'></i>
+          </td>";
+    $contador++;
     echo "</tr>";
 }
+echo "<tr id='taulaP'></td>";
 echo "<tr>";
 $idContador = 1;
 for ($i=0; $i < 4 ; $i++) {
-    echo "<td> <input id='input{$idContador}' type='text' required></td>";
+    echo "<td> <input class='inputs' id='input{$idContador}' type='text' required></td>";
     $idContador ++;
 }
 echo "</tr>";

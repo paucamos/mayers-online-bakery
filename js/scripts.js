@@ -51,23 +51,43 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-//Funcio jQuery
-$(document).ready(function(){
-
-$("#afegeix").click(function() {
-  var id = document.getElementById('input1').value;
-  var nom = document.getElementById('input2').value;
-  var descripcio = document.getElementById('input3').value;
-  var preu = document.getElementById('input4').value;
-  $.post("funcionsDB/crea.php", {
-      id: id,
-      nom: nom,
-      descripcio: descripcio,
-      preu: preu
+function elimina(id) {
+  $.post("funcionsDB/elimina.php", {
+      id: id
     },
     function(data, status) {
-      var d = JSON.parse(data);
-      alert(d.producte);
-      //location.reload();
+      $('#producte_').attr('id', 'producte_' + id);
+      $('#producte_' + id).remove();
     });
-})});
+}
+
+//Funcio jQuery
+$(document).ready(function() {
+
+
+  $("#afegeix").click(function() {
+    var id = document.getElementById('input1').value;
+    var nom = document.getElementById('input2').value;
+    var descripcio = document.getElementById('input3').value;
+    var preu = document.getElementById('input4').value;
+    $.post("funcionsDB/crea.php", {
+        id: id,
+        nom: nom,
+        descripcio: descripcio,
+        preu: preu
+      },
+      function(data, status) {
+        var d = jQuery.parseJSON(data);
+        $("#taulaP").append("<td>" + d.id + "</td>");
+        $("#taulaP").append("<td>" + d.nom + "</td>");
+        $("#taulaP").append("<td>" + d.descripcio + "</td>");
+        $("#taulaP").append("<td>" + d.preu + "</td>");
+        $("#taulaP").append("<td id='elimina'><i class='fas fa-trash-alt'></i></td>");
+
+
+        for (var i = 0; i <= 4; i++) { //neteja els inputs segons el id
+          $('#input' + i).val('');
+        }
+      });
+  })
+});

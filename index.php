@@ -18,6 +18,9 @@
 <body>
   <div class="pimg1">
     <?php
+
+     // TODO: sendgrid php : youtube watch later
+     
       if (isset($_SESSION['usuari'])) {
           echo '<a href="server/tancaSessio.php">
           <div class="user">
