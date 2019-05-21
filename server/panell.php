@@ -7,11 +7,9 @@ echo "<table border=1 class='taulaProductes' id='taulaElements'>";
 $contador = 1;
 $numImg = 1;
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr class='producte' id='fila'>";
+    echo "<tr class='producte' id='fila{$row['id']}'>";
+    $id = $row['id'];
     foreach ($row as $field => $value) {
-        if ($value == $row['id']) { //guardo el id dins una variable
-            $id = $value;
-        }
         echo  "<td class='propiedades' id='propietat{$id}'>{$value} </td>" ;
     }
     //funcio elimina passant el id
@@ -21,8 +19,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     $contador++;
     echo "</tr>";
 }
-echo "<tr id='filaNova'></tr>";
-echo "<tr>";
+
+echo "<tr id='formulari'>";
 $idContador = 1;
 for ($i=0; $i < 4 ; $i++) {
     echo "<td> <input class='inputs' id='input{$idContador}' type='text' required></td>";

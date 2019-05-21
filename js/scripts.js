@@ -56,8 +56,7 @@ function elimina(id) {
       id: id
     },
     function(data, status) {
-      $('#fila').attr('class', 'elimina' + id);
-      $('.elimina' + id).remove();
+      $('#fila'+ id).remove();
     });
 }
 
@@ -74,12 +73,13 @@ function crea(id) {
     },
     function(data, status) {
       var d = jQuery.parseJSON(data);
-      $("#filaNova").append("<td id='propietat"+id+"'>" + d.id + "</td>");
-      $("#filaNova").append("<td id='propietat"+id+"'>" + d.nom + "</td>");
-      $("#filaNova").append("<td id='propietat"+id+"'>" + d.descripcio + "</td>");
-      $("#filaNova").append("<td id='propietat"+id+"'>" + d.preu + "</td>");
-      $("#filaNova").append("<td id='elimina' onclick='elimina(id)'><i class='fas fa-trash-alt'></i></td>");
-      $('#filaNova').attr('id', 'fila');
+      var fila = $("<tr></tr>").insertBefore("#formulari");
+      fila.append("<td id='propietat"+id+"'>" + d.id + "</td>");
+      fila.append("<td id='propietat"+id+"'>" + d.nom + "</td>");
+      fila.append("<td id='propietat"+id+"'>" + d.descripcio + "</td>");
+      fila.append("<td id='propietat"+id+"'>" + d.preu + "</td>");
+      fila.append("<td id='elimina' onclick='elimina("+d.id+")'><i class='fas fa-trash-alt'></i></td>");
+      fila.attr('id', 'fila'+ d.id);
 
 
       for (var i = 0; i <= 4; i++) { //neteja els inputs segons el id
