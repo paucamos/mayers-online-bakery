@@ -1,5 +1,4 @@
 <?php
-session_start();
 $error=''; //Variable per a guardar el missatge d'error;
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {

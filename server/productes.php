@@ -1,20 +1,33 @@
 <?php
 
 
-$sql = "SELECT nom, descripcio, preu FROM productes";
+$sql = "SELECT * FROM productes ORDER BY id ASC";
 $result = mysqli_query($conn, $sql); // First parameter is just return of "mysqli_connect()" function
 echo "<br>";
 echo "<div class='taulaProductes' >";
 $contador = 0;
 $numImg = 1;
 while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
-    echo "<div class='producte' >";
-    foreach ($row as $field => $value) { // I you want you can right this line like this: foreach($row as $value) {
-        echo  "<div id='objeto".$contador ++."' class='propiedades' >" . $value . "</div>" ; // I just did not use "htmlspecialchars()" function.
-    }
-    echo  "<img class='fotoProducte' src='../img/img".$numImg.".jpg'>";
-    $numImg ++;
-    $contador = 0;
-    echo "</div>";
+  echo '<form method="post" action="botiga.php?action=add&id='. $row["id"] .'">';
+    echo '<div class="info">';
+      echo  "<img class='fotoProducte' src='../img/img".$numImg.".jpg'>";
+      $numImg ++;
+
+      echo '<div class="caption">';
+        echo '<div class="content">';
+              echo "<h4 style='display: none;' class='propiedades'>".$row["id"]."</h4>";
+              echo "<h4 class='propiedades'>".$row["nom"]."</h4>";
+              echo "<h4 class='propiedades'>".$row["descripcio"]."</h4>";
+              echo "<h4 class='propiedades'>".$row["preu"]."</h4>";
+              echo '<input type="submit" name="add_to_cart" class="btn btn-success" value="Compra" >';
+        echo '</div>';
+      echo '</div>';
+    echo '</div>';
+  echo "</form>";
+  $contador = 0;
 }
 echo "</div>";
+
+if (isset($_POST["add_to_cart"])) {
+  echo "Hola";
+}

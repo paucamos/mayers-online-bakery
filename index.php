@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +16,16 @@
   <script src="js/scripts.js"></script>
   <link rel="icon" type=”image/png” href=”img/favicon.png/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
   <div class="pimg1">
     <?php
 
      // TODO: sendgrid php : youtube watch later
-     
+
       if (isset($_SESSION['usuari'])) {
           echo '<a href="server/tancaSessio.php">
           <div class="user">
@@ -49,6 +54,11 @@
     <a href="#contacta">Contacta</a>
   </div>
   <div id="main">
+    <?php
+      if (!isset($_SESSION["usuari"])) {
+        echo '<div class="llista_compra"><i class="fas fa-shopping-cart"></i></div>';
+      }
+    ?>
     <button class="openbtn" id="icoMenu" onclick="controlaBoto()">☰</button>
   </div>
     <!--Fi menu superior-->

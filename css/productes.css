@@ -12,29 +12,46 @@
   background-attachment: absolute;
 }
 
-.producte {
-  background-color: grey;
-  border-radius: 15px;
-  display: inline-block;
-  margin: 3px;
-  height: 400px;
-}
-
-.producte:hover img {
-  opacity: 0.2;
-}
-
-#objeto0 {
-  font-size: 20px;
-  color: white;
-  text-transform: uppercase;
-}
-
-.propiedades {
-  display: none;
-}
-
-.fotoProducte {
+.info {
+  overflow: hidden;
   width: 400px;
   height: 400px;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 4px 4px 15px 2px rgba(0,0,0,0.35);
+}
+.info img{
+  width: 400px;
+  height: 400px;
+  transition: 0.4s;
+}
+.info .caption {
+  position: absolute;
+  top: 150%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.70);
+  transition: 0.5s;
+  text-align: center;
+}
+.info .caption .content {
+  position: relative;
+  top: 10%;
+  color: #fff;
+}
+.info .caption .content i {
+  background: rgba(255, 255, 255, 0.60);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 32px;
+}
+.info .caption .content input[type="submit"] {
+  border:0;
+  background: #9a1919;
+  padding: 7px;
+}
+.info:hover .caption {
+  top: 0px;
 }
