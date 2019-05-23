@@ -97,20 +97,18 @@ function tancaLlista() {
   document.getElementById("llistaPop").style.display = "none";
 }
 
-
-var array = [];
-
 function afegeix(id) {
-  array.push(id, nom);
-  document.getElementById('carro').innerHTML = array.length;
-  document.getElementById('carrito').innerHTML = array["nom"];
-
-
+  $.post("shoppingcart.php",{
+    id: id
+  },
+  function(data, status) {
+      alert(status);
+    }
+  );
 }
 
+
 //Funcio jQuery
-/*$(document).ready(function() {
+$(document).ready(function() {
 
-
-
-});*/
+});

@@ -19,8 +19,9 @@ while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary
               echo "<h4 class='propiedades'>".$row["nom"]."</h4>";
               echo "<h4 class='propiedades'>".$row["descripcio"]."</h4>";
               echo "<h4 class='propiedades'>".$row["preu"]."</h4>";
-              echo '<button onclick="afegeix('.$row["id"].')" name="add_to_cart" class="btn btn-success" value="Compra" > Afegeix al carro </button>';
+              echo "<button onclick='afegeix(".$row["id"].")' > Afegeix al carro </button>";
         echo '</div>';
+        //onclick="afegeix('.$row["id"].')"
       echo '</div>';
     echo '</div>';
   echo "</form>";

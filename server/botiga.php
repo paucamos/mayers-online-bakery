@@ -16,8 +16,11 @@
   <link rel="stylesheet" href="../css/estilLogin.css">
   <link rel="stylesheet" href="../css/productes.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <script src="../js/scripts.js"></script>
   <script src="jquery-3.4.0.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+
+  </script>
+  <script src="../js/scripts.js"></script>
   <script type="text/javascript" src="../js/server.js"></script>
 </head>
 <body>
