@@ -56,7 +56,7 @@ function elimina(id) {
       id: id
     },
     function(data, status) {
-      $('#fila'+ id).remove();
+      $('#fila' + id).remove();
     });
 }
 
@@ -74,12 +74,12 @@ function crea(id) {
     function(data, status) {
       var d = jQuery.parseJSON(data);
       var fila = $("<tr></tr>").insertBefore("#formulari");
-      fila.append("<td id='propietat"+id+"'>" + d.id + "</td>");
-      fila.append("<td id='propietat"+id+"'>" + d.nom + "</td>");
-      fila.append("<td id='propietat"+id+"'>" + d.descripcio + "</td>");
-      fila.append("<td id='propietat"+id+"'>" + d.preu + "</td>");
-      fila.append("<td id='elimina' onclick='elimina("+d.id+")'><i class='fas fa-trash-alt'></i></td>");
-      fila.attr('id', 'fila'+ d.id);
+      fila.append("<td id='propietat" + id + "'>" + d.id + "</td>");
+      fila.append("<td id='propietat" + id + "'>" + d.nom + "</td>");
+      fila.append("<td id='propietat" + id + "'>" + d.descripcio + "</td>");
+      fila.append("<td id='propietat" + id + "'>" + d.preu + "</td>");
+      fila.append("<td id='elimina' onclick='elimina(" + d.id + ")'><i class='fas fa-trash-alt'></i></td>");
+      fila.attr('id', 'fila' + d.id);
 
 
       for (var i = 0; i <= 4; i++) { //neteja els inputs segons el id
@@ -88,9 +88,29 @@ function crea(id) {
     });
 }
 
+/*obrir llista*/
+function obraLlista() {
+  document.getElementById("llistaPop").style.display = "block";
+}
+
+function tancaLlista() {
+  document.getElementById("llistaPop").style.display = "none";
+}
+
+
+var array = [];
+
+function afegeix(id) {
+  array.push(id, nom);
+  document.getElementById('carro').innerHTML = array.length;
+  document.getElementById('carrito').innerHTML = array["nom"];
+
+
+}
+
 //Funcio jQuery
-$(document).ready(function() {
+/*$(document).ready(function() {
 
 
 
-});
+});*/

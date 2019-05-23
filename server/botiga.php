@@ -19,9 +19,6 @@
   <script src="../js/scripts.js"></script>
   <script src="jquery-3.4.0.min.js"></script>
   <script type="text/javascript" src="../js/server.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
   <?php
@@ -47,8 +44,7 @@
         if (isset($_SESSION['usuari'])) {
             echo '<a href="crm.php">CRM</a>';
         } else {
-
-          echo '<!-- FORM LOGIN -->
+            echo '<!-- FORM LOGIN -->
           <a class="open-button" onclick="openForm()"><i class="far fa-user"></i> Entra</a>
 
           <div class="form-popup" id="myForm">
@@ -73,7 +69,14 @@
   <div id="main">
     <?php
       if (!isset($_SESSION["usuari"])) {
-        echo '<div class="llista_compra"><span class="mdl-badge" data-badge="4"><i class="fas fa-shopping-cart"></i></span></div>';
+          echo '<div class="llista_compra" onclick="obraLlista()">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span id="carro" data-badge="4"></span>
+                  <div class="llista_pop_up" id="llistaPop">
+                    <h4> Llista de la compra: </h4>
+                    <span id="carrito"></span>
+                  </div>
+                </div>';
       }
     ?>
     <button class="openbtn" id='icoMenu' onclick="controlaBoto()">☰</button>

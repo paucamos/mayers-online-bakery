@@ -8,7 +8,7 @@ echo "<div class='taulaProductes' >";
 $contador = 0;
 $numImg = 1;
 while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
-  echo '<form method="post" action="botiga.php?action=add&id='. $row["id"] .'">';
+  //echo '<form method="post" class="formulariP" action="botiga.php?action=add&id='. $row["id"] .'">';
     echo '<div class="info">';
       echo  "<img class='fotoProducte' src='../img/img".$numImg.".jpg'>";
       $numImg ++;
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary
               echo "<h4 class='propiedades'>".$row["nom"]."</h4>";
               echo "<h4 class='propiedades'>".$row["descripcio"]."</h4>";
               echo "<h4 class='propiedades'>".$row["preu"]."</h4>";
-              echo '<input type="submit" name="add_to_cart" class="btn btn-success" value="Compra" >';
+              echo '<button onclick="afegeix('.$row["id"].')" name="add_to_cart" class="btn btn-success" value="Compra" > Afegeix al carro </button>';
         echo '</div>';
       echo '</div>';
     echo '</div>';
@@ -27,7 +27,3 @@ while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary
   $contador = 0;
 }
 echo "</div>";
-
-if (isset($_POST["add_to_cart"])) {
-  echo "Hola";
-}
