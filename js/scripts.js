@@ -89,22 +89,38 @@ function crea(id) {
 }
 
 /*obrir llista*/
+var llistaObert = false;
+
+function controlaLlista() {
+  if (llistaObert) {
+    tancaLlista();
+  } else {
+    obraLlista();
+  }
+}
+
 function obraLlista() {
   document.getElementById("llistaPop").style.display = "block";
+  llistaObert = true;
 }
 
 function tancaLlista() {
   document.getElementById("llistaPop").style.display = "none";
+  llistaObert = false;
 }
 
 function afegeix(id) {
-  $.post("shoppingcart.php",{
-    id: id
-  },
-  function(data, status) {
-      alert(status);
-    }
-  );
+  $.ajax({
+    url: 'shoppingcart.php',
+    type: 'get',
+    cache: true,
+    data: {
+      id: id
+    },
+    success: function(response) {
+      console.log("ok");
+    },
+  });
 }
 
 

@@ -13,6 +13,10 @@ session_start();
   <link rel="stylesheet" href="css/estilsMenu.css">
   <link rel="stylesheet" href="css/estilsContacta.css">
   <link rel="stylesheet" href="css/scroll.css">
+  <link rel="stylesheet" type="text/css" href="../css/estils.css">
+  <link rel="stylesheet" href="css/estilLogin.css">
+  <link rel="stylesheet" href="css/productes.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/scripts.js"></script>
   <link rel="icon" type=”image/png” href=”img/favicon.png/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -53,7 +57,16 @@ session_start();
   <div id="main">
     <?php
       if (!isset($_SESSION["usuari"])) {
-        echo '<div class="llista_compra"><i class="fas fa-shopping-cart"></i></div>';
+          echo '<div class="llista_compra" onclick="controlaLlista()">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span id="carro" data-badge="4"></span>
+                  <div class="llista_pop_up" id="llistaPop">
+                    <h4> Llista de la compra: </h4>';
+          include("server/displayCarro.php");
+          echo '
+                    <span id="carrito"></span>
+                  </div>
+                </div>';
       }
     ?>
     <button class="openbtn" id="icoMenu" onclick="controlaBoto()">☰</button>
