@@ -51,6 +51,21 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
+function eliminaCarro(id_producte) {
+  var preu = 0;
+  $.post("funcionsDB/eliminaCarro.php", {
+    idProducte: id_producte
+  }, function(data, status) {
+    $('#filaCarro' + id_producte).remove();
+    $("#preuTotal").text("");
+    if (data != "") {
+      $('#preuTotal').append(data + "€");
+    } else {
+      $('#preuTotal').append("0€");
+    }
+  });
+}
+
 function elimina(id) {
   $.post("funcionsDB/elimina.php", {
       id: id
@@ -117,8 +132,8 @@ function afegeix(id) {
     data: {
       id: id
     },
-    success: function(response) {
-      console.log("ok");
+    success: function(data, response) {
+      document.getElementById("llistaPop").innerHTML = data;
     },
   });
 }

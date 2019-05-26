@@ -1,20 +1,26 @@
 <?php
 include('conexio.php');
 
-$sql = "SELECT nom, preu FROM productes RIGHT JOIN carro ON id = id_producte";
+$sql = "SELECT id_producte, nom, preu FROM productes RIGHT JOIN carro ON id = id_producte";
 $result = mysqli_query($conn, $sql);
 $preuTotal = 0;
-echo "<table border=1 class='carroDisplayed'>";
+echo "<h4> Llista de la compra: </h4>";
+echo "<table border=1 class='carroDisplayed' id='elementsCarro'>";
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr>";
+    $idProd = $row['id_producte'];
+    echo "<tr id='filaCarro{$idProd}' >";
     echo "<td>".$row["nom"]. "</td>";
     echo "<td>".$row["preu"]."€</td>";
+    //funcio elimina passant el id
+    echo "<td id='elimina' onclick='eliminaCarro(".$idProd.")'>
+              <i class='fas fa-trash-alt'></i>
+          </td>";
     echo "</tr>";
 
     $preuTotal += $row["preu"];
 }
 echo "<td>Total:</td>";
-echo "<td>".$preuTotal."€ </td>";
+echo "<td id='preuTotal'>{$preuTotal}€</td>";
 echo "</table>";
 // TODO: Editar boton compra
 echo "<button>Compra</button>";

@@ -68,16 +68,16 @@
   <div id="main">
     <?php
       if (!isset($_SESSION["usuari"])) {
-          echo '<div class="llista_compra" onclick="controlaLlista()">
+          echo '<div class="llista_compra" onclick="controlaLlista()" id="carrito">
                   <i class="fas fa-shopping-cart"></i>
                   <span id="carro" data-badge="4"></span>
-                  <div class="llista_pop_up" id="llistaPop">
-                    <h4> Llista de la compra: </h4>';
+
+                </div>';
+          echo '<div class="llista_pop_up" id="llistaPop">';
           include("displayCarro.php");
           echo '
-                    <span id="carrito"></span>
-                  </div>
-                </div>';
+                <span id="carrito"></span>
+              </div>';
       }
     ?>
     <button class="openbtn" id='icoMenu' onclick="controlaBoto()">☰</button>

@@ -1,0 +1,29 @@
+.panell {
+  width: 80%;
+  height: auto;
+  background-color: rgb(0, 0, 0, 0.7);
+  padding: 30px;
+  position: relative;
+  top: 40%;
+  margin: 0px auto;
+}
+
+.taulaProductes {
+  width: 100%;
+}
+
+.boton {
+  width: auto;
+  height: auto;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background-color: grey;
+}
