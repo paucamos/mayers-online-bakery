@@ -57,7 +57,9 @@ body {
   transition: margin-left .5s;
   padding: 16px;
 }
-
+#titolLlista {
+  color: white;
+}
 .llista_compra {
   user-select: none;
   text-decoration: none;
@@ -88,9 +90,35 @@ body {
 }
 
 .carroDisplayed {
-  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 15px; //mostra nomes els borders radius de adalt a la dreta i esquerra
+  border-top-right-radius: 15px;
   color: white;
   width: 100%;
+  padding: 10px;
+}
+#compraProd {
+  background: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+#compraProd:hover {
+  background: #737373;
+}
+
+#compraProd:active {
+  background-color: white;
+  color: black;
+}
+
+.textCompra {
+  top: 15%;
+  position: relative;
+  font-weight: bold;
+  color: white;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

@@ -1,3 +1,11 @@
+h2 {
+  color: white;
+}
+
+body {
+  color: white;
+}
+
 .panell {
   width: 80%;
   height: auto;
@@ -6,6 +14,7 @@
   position: relative;
   top: 40%;
   margin: 0px auto;
+  text-align: center;
 }
 
 .taulaProductes {
@@ -26,4 +35,44 @@
 
 .boton:hover {
   background-color: grey;
+}
+
+.botoCrea {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: system-ui;
+  font-size: 11px;
+  margin-top: 20px;
+  margin-bottom: -8px;
+}
+
+.botoCrea:hover {
+  background-color: grey;
+}
+
+#modifica a {
+  text-decoration: none;
+  color: white;
+}
+
+#elimina i {
+  color: white;
+  cursor: pointer;
+}
+
+.panellModifica {
+  position: relative;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+form {
+  margin: auto;
+  width: 70%;
 }

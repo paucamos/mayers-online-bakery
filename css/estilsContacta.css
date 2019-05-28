@@ -27,6 +27,22 @@ input[type=submit] {
   cursor: pointer;
 }
 
+#tornaEnrera {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: system-ui;
+  font-size: 11px;
+}
+#tornaEnrera:hover {
+  background-color: grey;
+}
+
+
 input[type=submit]:hover {
   background-color: grey;
 }

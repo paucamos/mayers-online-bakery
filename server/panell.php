@@ -13,6 +13,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo  "<td class='propiedades' id='propietat{$id}'>{$value} </td>" ;
     }
     //funcio elimina passant el id
+    echo "<td id='modifica'><a href='./funcionsDB/modifica.php?id=$row[id]&nom=$row[nom]&descripcio=$row[descripcio]&preu=$row[preu]' >
+              <i class='fas fa-pencil-alt'></i>
+          </a></td>";
     echo "<td id='elimina' onclick='elimina(".$id.")'>
               <i class='fas fa-trash-alt'></i>
           </td>";
@@ -28,4 +31,4 @@ for ($i=0; $i < 4 ; $i++) {
 }
 echo "</tr>";
 echo "</table>";
-echo '<button id="afegeix" onclick=crea(id)>Crea</button>';
+echo '<div id="afegeix" class="botoCrea" onclick=crea(id)>Crea</div>';

@@ -50,10 +50,10 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-
+// TODO: Fer canvis .post de eliminaCarro
 function eliminaCarro(id_producte) {
   var preu = 0;
-  $.post("funcionsDB/eliminaCarro.php", {
+  $.post("server/funcionsDB/eliminaCarro.php", {
     idProducte: id_producte
   }, function(data, status) {
     $('#filaCarro' + id_producte).remove();
@@ -93,6 +93,7 @@ function crea(id) {
       fila.append("<td id='propietat" + id + "'>" + d.nom + "</td>");
       fila.append("<td id='propietat" + id + "'>" + d.descripcio + "</td>");
       fila.append("<td id='propietat" + id + "'>" + d.preu + "</td>");
+      fila.append("<td id='modifica'><a href='funcionsDB/modifica.php?id=" + d.id + "&nom=" + d.nom + "&descripcio=" + d.descripcio + "&preu=" + d.preu + "' ><i class='fas fa-pencil-alt'></i></a></td>");
       fila.append("<td id='elimina' onclick='elimina(" + d.id + ")'><i class='fas fa-trash-alt'></i></td>");
       fila.attr('id', 'fila' + d.id);
 
@@ -141,5 +142,17 @@ function afegeix(id) {
 
 //Funcio jQuery
 $(document).ready(function() {
+  $('#actualitza').click(function(event){
+    event.preventDefault();
+    $.ajax ({
+      url: "modificaBack.php",
+      method: "post",
+      data: $('form').serialize(),
+      dataType: "text",
+      success: function(strMessage) {
+        $('#message').text(strMessage)
+      }
+    })
 
+  })
 });

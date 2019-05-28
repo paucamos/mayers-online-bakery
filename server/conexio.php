@@ -1,5 +1,7 @@
 <?php
 //establim conexio
-$conn = mysqli_connect("localhost", "id9727179_root", "Admin1_?");
+// $db = mysqli_select_db($conn, "id9727179_mayers");
+$conn = mysqli_connect("localhost", "root", "");
 //seleccionem database
-$db = mysqli_select_db($conn, "id9727179_mayers");
+// $db = mysqli_select_db($conn, "id9727179_mayers");
+$db = mysqli_select_db($conn, "mayers");
