@@ -41,7 +41,11 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+// formulari registre
 
+function openRegister() {
+  document.getElementById("registre").style.display = "block";
+}
 //formulari LOGIN
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -49,11 +53,12 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+  document.getElementById("registre").style.display = "none";
 }
 // TODO: Fer canvis .post de eliminaCarro
 function eliminaCarro(id_producte) {
   var preu = 0;
-  $.post("server/funcionsDB/eliminaCarro.php", {
+  $.post("funcionsDB/eliminaCarro.php", {
     idProducte: id_producte
   }, function(data, status) {
     $('#filaCarro' + id_producte).remove();
@@ -74,8 +79,18 @@ function elimina(id) {
       $('#fila' + id).remove();
     });
 }
+/*function processSelectedFiles(fileInput) {
+  var files = fileInput.files;
+  files = files[0].name;
 
-function crea(id) {
+  for (var i = 0; i < files.length; i++) {
+    alert("Filename " + files[i].name);
+  }
+}*/
+
+function crea(id, fileInput) {
+  var files = fileInput.files;
+  alert(files.name);
   var id = document.getElementById('input1').value;
   var nom = document.getElementById('input2').value;
   var descripcio = document.getElementById('input3').value;
@@ -84,7 +99,8 @@ function crea(id) {
       id: id,
       nom: nom,
       descripcio: descripcio,
-      preu: preu
+      preu: preu,
+      img: filename
     },
     function(data, status) {
       var d = jQuery.parseJSON(data);

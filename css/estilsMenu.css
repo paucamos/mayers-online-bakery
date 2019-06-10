@@ -35,7 +35,18 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
-
+.register-button {
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  bottom: 55px;
+  width: 100%;
+  margin-top: 205%;
+  background-color: #3D3D3D;
+  position: absolute;
+}
 .openbtn {
   text-decoration: none;
   width: 50px;
@@ -63,11 +74,8 @@ body {
 .llista_compra {
   user-select: none;
   text-decoration: none;
-  display: inline;
   right: 0;
   margin-right: 15px;
-  width: 60px;
-  height: auto;
   font-size: 20px;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
@@ -77,6 +85,7 @@ body {
   text-align: center;
   position: fixed;
   z-index: 99;
+  height: 45px;
 }
 
 .llista_compra:hover {
@@ -91,7 +100,7 @@ body {
 
 .carroDisplayed {
   background: rgba(0, 0, 0, 0.5);
-  border-top-left-radius: 15px; //mostra nomes els borders radius de adalt a la dreta i esquerra
+  border-top-left-radius: 15px; 
   border-top-right-radius: 15px;
   color: white;
   width: 100%;

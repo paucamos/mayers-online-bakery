@@ -29,6 +29,7 @@ for ($i=0; $i < 4 ; $i++) {
     echo "<td> <input class='inputs' id='input{$idContador}' type='text' required></td>";
     $idContador ++;
 }
+echo "<td><input id='image-file' type='file' name='arxiu'></td>";
 echo "</tr>";
 echo "</table>";
 echo '<div id="afegeix" class="botoCrea" onclick=crea(id)>Crea</div>';

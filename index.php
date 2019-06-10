@@ -1,6 +1,6 @@
 <?php
-session_start();
- ?>
+  include('server/session.php');
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +21,26 @@ session_start();
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
+<?php
+  // TODO: Crear estils articles
+    include('server/login.php'); // Conexio
+    include('server/registre.php');
+  ?>
+  <?php
+    if (isset($_SESSION['usuari'])) {
+        echo '<a href="server/surtUser.php">
+        <div class="logout">
+          <i id="ico" class="fas fa-sign-out-alt"><span style="font-family: Arial"> Surt</span></i>
+        </div>
+      </a>';
+    }
+   ?>
+  <?php 
+    if (isset($_SESSION['usuari'])) {
+      echo "<div class='user' ><i id='ico' class='far fa-user'></i> {$login_session}</div>";
+    } 
+  ?>
   <div class="pimg1">
-    <?php
-
-     // TODO: sendgrid php : youtube watch later
-
-      if (isset($_SESSION['usuari'])) {
-          echo '<a href="server/tancaSessio.php">
-          <div class="user">
-            <i id="ico" class="far fa-user"><span style="font-family: Arial"> Surt</span></i>
-          </div>
-        </a>';
-      }
-    ?>
     <button onclick="topFunction()" id="myBtn" title="amunt">▲</button>
     <!--Menu superior-->
   <div id="mySidebar" class="sidebar">
@@ -44,8 +51,11 @@ session_start();
     <?php
     if (isset($_SESSION['usuari'])) {
         // session isn't started
+          if ($_SESSION['usuari'] == 'admin') {
+            echo '<a href="crm.php">CRM</a>';
+          }
         echo '<a href="./server/botiga.php">Botiga</a>';
-        echo '<a href="./server/crm.php">CRM</a>';
+
     } else {
         echo '<a href="./server/botiga.php">Botiga</a>';
     }
@@ -54,20 +64,6 @@ session_start();
     <a href="#contacta">Contacta</a>
   </div>
   <div id="main">
-    <?php
-      if (!isset($_SESSION["usuari"])) {
-          echo '<div class="llista_compra" onclick="controlaLlista()" id="carrito">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span id="carro" data-badge="4"></span>
-
-                </div>';
-          echo '<div class="llista_pop_up" id="llistaPop">';
-          include("server/displayCarro.php");
-          echo '
-                <span id="carrito"></span>
-              </div>';
-      }
-    ?>
     <button class="openbtn" id="icoMenu" onclick="controlaBoto()">☰</button>
   </div>
     <!--Fi menu superior-->

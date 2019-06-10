@@ -1,12 +1,7 @@
 <?php
 include('conexio.php');
-include('session.php');
-$id = $_GET["id"];
-$sql = "INSERT INTO carro ( id_producte, id_usuari) values ($id, $loginId)";
 
-$result = mysqli_query($conn, $sql);
-
-$sql2 = "SELECT id, nom, preu
+$sql = "SELECT id, nom, preu
 FROM productes
 INNER JOIN carro
 ON productes.id = carro.id_producte
@@ -14,11 +9,10 @@ INNER JOIN usuaris u
 ON carro.id_usuari = $loginId
 GROUP BY id";
 
-$result2 = mysqli_query($conn, $sql2);
+$result = mysqli_query($conn, $sql);
 $preuTotal = 0;
-echo "<h4> Llista de la compra: </h4>";
-echo "<table border=1 class='carroDisplayed' id='elementsCarro'>";
-while ($row = mysqli_fetch_assoc($result2)) {
+echo "<table class='carroDisplayed' id='elementsCarro'>";
+while ($row = mysqli_fetch_assoc($result)) {
     $idProd = $row['id'];
     echo "<tr id='filaCarro{$idProd}' >";
     echo "<td>".$row["nom"]. "</td>";
@@ -34,4 +28,4 @@ while ($row = mysqli_fetch_assoc($result2)) {
 echo "<td>Total:</td>";
 echo "<td id='preuTotal'>{$preuTotal}€</td>";
 echo "</table>";
-echo "<a href='checkout.php' > <div id='compraProd'><span class='textCompra'>Compra</span></div> </a>";
+echo "<a href='accioCompra.php' > <div id='compraProd'><span class='textCompra'>Compra</span></div> </a>";

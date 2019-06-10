@@ -13,8 +13,6 @@ while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary
     echo '<div class="info">';
     if ($numImg == $row["id"]) {
       echo  "<img class='fotoProducte' src='../img/".$numImg.".jpg'>";
-
-
     }
     echo $numImg;
     $numImg ++;
